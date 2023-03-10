@@ -1,0 +1,673 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+    body {
+        width: 980px;
+    }
+}
+
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #5364cc;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1 {
+    text-align: center;
+}
+h2,h3 {
+    text-align: left;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+h3 {
+    font-weight: 600;
+    margin: 16px 0px 4px 0px;
+}
+
+.paper-title {
+    padding: 1px 0px 1px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+
+.author-row, .affil-row {
+    font-size: 26px;
+}
+
+.author-row-new { 
+    text-align: center; 
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 12px;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affiliatons {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 18px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+
+video {
+    display: block;
+    margin: auto;
+}
+
+
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.paper-btn-coming-soon {
+    position: relative; 
+    top: 0;
+    left: 0;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.venue {
+    font-size: 23px;
+}
+
+.topnav {
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.topnav div {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav img {
+    padding: 2px 0px;
+    width: 100%;
+    margin: 0.2em 0px 0.3em 0px;
+    vertical-align: middle;
+}
+
+pre {
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 620px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 50%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  text-align: center;
+  float: left;
+  width: 16.666%;
+  padding: 5px;
+}
+.column3 {
+  text-align: center;
+  float: left;
+  width: 33.333%;
+  padding: 5px;
+}
+.column4 {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.column5 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column3 {
+    width: 100%;
+  }
+}
+
+
+
+
+</style>
+<link rel="stylesheet" href="bootstrap-grid.css">
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
+      rel='stylesheet' type='text/css'>
+<head>
+    <title> NeuSE: Neural SE(3)-Equivariant Embedding for<br>
+            Consistent Spatial Understanding with Objects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="Is Conditional Generative Modeling all you need for Decision-Making?"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <meta name="twitter:title" content="Is Conditional Generative Modeling all you need for Decision-Making?">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+</head>
+
+<body>
+
+
+<div class="container">
+    <div class="paper-title">
+        <h1>
+            NeuSE: Neural SE(3)-Equivariant Embedding for<br>
+            Consistent Spatial Understanding with Objects</h1>
+    </div>
+
+    <div id="authors">
+        <center>
+            <div class="author-row-new">
+                <a href="https://scholar.google.com/citations?user=-FqjG8kAAAAJ&hl=en">Jiahui Fu</a>,
+                <a href="https://yilundu.github.io">Yilun Du</a>,
+                <a href="https://www.linkedin.com/in/kurran-singh/">Kurran Singh</a>,
+                <a href="https://mitibmwatsonailab.mit.edu/people/joshua-tenenbaum/">Joshua B. Tenenbaum</a>,
+                <a href="https://www.csail.mit.edu/person/john-leonard">John J. Leonard</a>
+            </div>
+        </center>
+        <center>
+            <div class="affiliations">
+                <span>MIT CSAIL</span><br/>
+            </div>
+            <div class="email">
+                <span>{jiahuifu,yilundu,singhk,jbt,jleonard}@mit.edu</span><br/>
+            </div>
+
+            <!--        <div class="affil-row">-->
+            <!--            <div class="venue text-center"><b>arXiv 2022 </b></div>-->
+            <!--        </div>-->
+
+        </center>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="paper.pdf">
+                    <span class="material-icons"> description </span>
+                    Paper
+                </a>
+                <div class="paper-btn-coming-soon">
+                    <a class="paper-btn" href="">
+                        <span class="material-icons"> code </span>
+                        Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <section id="teaser-image">
+        <center>
+            <figure>
+                <video class="centered" width="100%" autoplay loop muted playsinline class="video-background ">
+                    <source src="img/teaser.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+        </center>
+    </section>
+    <hr>
+    <section id="abstract"/>
+    <h2>Abstract</h2>
+    <div class="flex-row">
+        <p>
+            We present <b>NeuSE</b>, a novel <b>Neu</b>ral <b>S</b>E(3)-
+            Equivariant <b>E</b>mbedding for objects, and illustrate how it supports
+            object SLAM for consistent spatial understanding with long-term
+            scene changes. NeuSE is created from partial object observations
+            and serves as a compact point cloud surrogate for complete object
+            models, encoding full shape information while transforming
+            SE(3)-equivariantly in tandem with the object in the physical
+            world. With NeuSE, relative frame transforms can be <b>directly</b> derived from inferred latent codes. Our
+            proposed SLAM paradigm, using NeuSE for object shape and pose characterization, can
+            operate independently or in conjunction with typical SLAM
+            systems. It directly infers SE(3) camera pose constraints that are
+            compatible with general SLAM pose graph optimization, while
+            also maintaining a lightweight object-centric map that adapts
+            to real-world changes. Our approach is evaluated on synthetic
+            and real-world sequences featuring changed objects and shows
+            improved localization accuracy and change-aware mapping capa-
+            bility, when working either standalone or jointly with a common
+            SLAM pipeline.
+        </p>
+    </div>
+    <br>
+    <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/k5xA6InegJ8" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+    </center>
+    <br>
+    </section>
+    <section id="method"/>
+    <hr><br>
+    <h2>Approach Overview</h2>
+    <div class="mx-auto">
+        <center><img class="card-img-top" src="img/overview.jpg" style="width:100%"></center>
+    </div>
+    <br>
+    <p>
+        The above schematic illustrates how we achive consistent spatial understanding with NeuSE. Object-centric map of
+        mugs and bottles constructed
+        from the real-world experiment is shown here for illustration.
+        <br>
+        <b>(a)</b> NeuSE acts as a compact point cloud surrogate for objects, encoding full object shapes and
+        transforming SE(3)-
+        equivariantly with the objects. Latent codes of bottles and mugs from different frames can be effectively
+        associated (dashed line) for direct computation of inter-frame transforms, which are then added to constrain
+        camera pose (T<sub>i</sub>)
+        optimization both locally (T<sub>L<sub>i</sub></sub></sub>) and globally (T<sub>G<sub>i</sub></sub></sub>). <br><b>(b)</b>
+        The system performs change-aware object-level mapping, where
+        <span style="color orange">changed objects</span> are updated alongside unchanged ones with full shape
+        reconstructions in the object-centric map.
+    </p>
+    </section>
+    <hr>
+
+    <section id="results">
+        <h2>Result Highlights</h2>
+        <p>
+            We evaluate the proposed algorithm on both synthetic
+            and real-world sequences consisting of unseen instances of the bottle and mug categories, where objects are
+            added, removed and
+            switched places to simulate environment changes in the long term. Below, we showcase the localization and
+            mapping results of the proposed NeuSE-based object SLAM approach on two self-collected real-world sequences:
+            (1) 4-Round loop and (2) Triple-infinity loop.
+        </p>
+        <h3> Localization with Temporal Scene Inconsistencies</h3>
+        <br>
+        <div class="mx-auto">
+            <center><img class="card-img-top" src="img/real_traj.jpg" style="width:100%"></center>
+        </div>
+        <br>
+        The above figure presents various <span style="color:green">estimated camera trajectories</span> against the
+        <span style="color:orange"> ground truth (GT)</span>. Color variation (colorbar on the right) of the estimated
+        trajectory
+        corresponds to the Absolute Trajectory Error (ATE) value distribution along the trajectory.
+        <p>(1) Shown in column 1, the proposed object SLAM paradigm demonstrates its ability to sustain reasonable
+            localization performance, when working standalone solely with NeuSE-inferred inter-frame camera pose
+            constraints (objects available) and noisy external odometry measurements (objects unavailable).
+            <br>(2) Shown in column 2-5, the proposed object SLAM paradigm demonstrates its ability to improve
+            localization accuracy, when working jointly with typical SLAM systems (ORB-SLAM3 here). Specifically, in <b>(a)</b>,
+            the integration of our strategy helps prevent the tracking failure, as shown by the spike-free trajectory
+            estimates in column
+            3&5 compared those in the column 2&4. In <b>(b)</b>, our strategy successfully eliminates the start and end
+            point drift for ORB3-PW, resulting in improved trajectory estimate when revisiting the lower right part of
+            the environment, as indicated by the
+            lighter color of ATE value distribution in column 5 compared to that in column 4.
+        </p>
+        <h3>Change-aware Objet-centric Mapping</h3>
+        <br>
+        <div class="mx-auto">
+            <center><img class="card-img-top" src="img/real_rec.jpg" style="width:100%"></center>
+        </div>
+        <br>
+        The above figure displays our change-aware object-centric mapping results for the real-world sequences, where
+        the proposed approach demonstrates the ability to maintain a consistent map of objects of interest in the
+        environment, with always timely update of the latest changes.
+        <br>
+        <b>(a)</b>: <b>(a.1)</b> presents the constructed object-centric map along with ground truth trajectories,
+        indicating qualitative spatial consistency between object reconstruction and actual camera motion. <b>(a.2)</b>
+        and <b>(a.3)</b> show the full scene reconstruction against estimated trajectories with the lowest RMSE of ATE
+        value.
+        <br>
+        <b>(d)</b>: <b>(d)</b> showcases the evolution of object layout on each table before and after changes: ground
+        truth scenes (GT), object-centric maps from our approach (Ours), and reconstructions from the chosen change
+        detection baseline <a href="https://arxiv.org/abs/2109.10165">Panoptic Multi-TSDF Mapping</a> (PMT). <span
+            style="color:#fad02c">Changed objects</span> are numbered as n, with n′ representing <span
+            style="color:00FF00">their correspondence after
+        changes</span> or newly added objects, and n indicating objects removed from the scene. In the second column,
+        our approach manages to maintain a lightweight, object-centric map that precisely captures object changes.
+        <br>
+        <b>(b)-(c)</b>: Change detection and recontruction failure by PMT. <b>(b)</b> records the recontruction
+        artifacts of PMT with overlapping changed objects, i.e., the red and black mugs (object 8 and 9 of table 3) and
+        the white and green bottles (object 2 and
+        3 of table 1). <b>(c)</b> highlights a false positive changed mug marked by PMT due to
+        imperfect localization, where little overlap exists between the two sides of the green mug when viewed from
+        different frames.
+    </section>
+    <hr>
+    <section id="paper">
+        <h2>Team</h2>
+        <div class="row">
+            <div class="column5">
+                <a href='https://scholar.google.com/citations?user=-FqjG8kAAAAJ&hl=en'>
+                    <img src=img/profile/jiahui.png class="figure-img img-fluid rounded-circle" height=200px
+                         width=200px>
+                </a>
+                <p class=profname>Jiahui Fu</p>
+                <p class=institution>MIT CSAIL</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://yilundu.github.io/'>
+                    <img src=img/profile/yilun.png class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Yilun Du </p>
+                <p class=institution>MIT CSAIL</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://www.linkedin.com/in/kurran-singh/'>
+                    <img src=img/profile/kurran.jpeg class="figure-img img-fluid rounded-circle" height=200px
+                         width=200px>
+                </a>
+                <p class=profname> Kurran Singh </p>
+                <p class=institution>MIT CSAIL</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://mitibmwatsonailab.mit.edu/people/joshua-tenenbaum/'>
+                    <img src=img/profile/josh.jpeg class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Joshua Tenenbaum </p>
+                <p class=institution>MIT CSAIL</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://www.csail.mit.edu/person/john-leonard/'>
+                    <img src=img/profile/john.jpg class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> John Leonard </p>
+                <p class=institution>MIT CSAIL</p>
+            </div>
+    </section>
+
+    <section id="paper">
+        <h2>Bibtex</h2>
+        <div class="page-body"><pre id="ad6975be-3353-467d-ae48-6313d767ffa6" class="code"><code>
+           TODO
+        </code></pre>
+            <p id="1a3aa306-c4b8-4872-8fb0-411495c73d55" class="">
+            </p></div>
+
+    </section>
+
+    <!--
+        <section id="paper">
+            <h2>Paper</h2>
+            <hr>
+            <div class="flex-row">
+                <div class="download-thumb">
+                <div style="box-sizing: border-box; padding: 16px; margin: auto;">
+                    <a href="https://energy-based-model.github.io/composing-pretrained-models/"><img class="screenshot" src="materials/thumb_finger.png"></a>
+                </div>
+            </div>
+                <div class="paper-stuff">
+                    <p><b>Composing Ensembles of Pre-trained Models via Iterative Consensus</b></p>
+                    <p>Shuang Li, Yilun Du, Joshua B. Tenenbaum, Antonio Torralba, Igor Mordatch</p>
+                    <div><span class="material-icons"> description </span><a href="https://arxiv.org/abs/2210.06978"> arXiv version</a></div>
+                    <div><span class="material-icons"> integration_instructions </span><a href="https://github.com/nv-tlabs/LION"> Code</a></div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+     -->
+
+    <!-- <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+        <pre><code>@inproceedings{zeng2022lion,
+            title={LION: Latent Point Diffusion Models for 3D Shape Generation},
+            author={Xiaohui Zeng and Arash Vahdat and Francis Williams and Zan Gojcic and Or Litany and Sanja Fidler and Karsten Kreis},
+            booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+            year={2022}
+        }</code></pre>
+    </section> -->
+
+    <section>
+        This webpage template was recycled from <a href='https://nv-tlabs.github.io/LION/'>here</a>.
+        <center><p><a href='https://accessibility.mit.edu/'><b>Accessibility</b></a></p></center>
+    </section>
+
+
+</div>
+</body>
+</html>
+
